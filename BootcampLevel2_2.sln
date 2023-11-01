@@ -43,24 +43,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "N67", "N67", "{E87F473E-B53
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeTasks", "HomeTasks", "{FC4FF639-8772-45D3-A3A4-047514847BDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N58-HT1-Drive", "N58-HT1-Drive\N58-HT1-Drive.csproj", "{DB185431-1A58-449E-BF95-F99C19380846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N58-HT1-Drive", "N58-HT1-Drive\N58-HT1-Drive.csproj", "{DB185431-1A58-449E-BF95-F99C19380846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drives.Application", "Drives.Application\Drives.Application.csproj", "{23A93E85-A33C-4ED9-A2F4-A75E8EA259F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drives.Application", "Drives.Application\Drives.Application.csproj", "{23A93E85-A33C-4ED9-A2F4-A75E8EA259F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drives.Infrastructure", "Drives.Infrastructure\Drives.Infrastructure.csproj", "{00704A2D-88B0-4C10-9CC9-49BBF637ECE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drives.Infrastructure", "Drives.Infrastructure\Drives.Infrastructure.csproj", "{00704A2D-88B0-4C10-9CC9-49BBF637ECE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drives.Api", "Drives.Api\Drives.Api.csproj", "{97F6A003-5390-4F31-B761-5A46640D7939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drives.Api", "Drives.Api\Drives.Api.csproj", "{97F6A003-5390-4F31-B761-5A46640D7939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filters.Application", "Filters.Application\Filters.Application.csproj", "{9643B4C7-25F1-4FBB-BF5A-1688C944C46F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filters.Application", "Filters.Application\Filters.Application.csproj", "{9643B4C7-25F1-4FBB-BF5A-1688C944C46F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filters.Infrastructure", "Filters.Infrastructure\Filters.Infrastructure.csproj", "{DD1C267E-0828-4BDD-858E-50DF62AEC058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filters.Infrastructure", "Filters.Infrastructure\Filters.Infrastructure.csproj", "{DD1C267E-0828-4BDD-858E-50DF62AEC058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filters.Api", "Filters.Api\Filters.Api.csproj", "{E5D83726-316D-4142-9EA8-909D96F22FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filters.Api", "Filters.Api\Filters.Api.csproj", "{E5D83726-316D-4142-9EA8-909D96F22FE5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{35A42E66-3C9B-48BA-839D-FC21F5A0CE8C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N62-HT1.Api", "N62-HT1.Api\N62-HT1.Api.csproj", "{B83FF78A-F3CA-4336-806E-E4C8939E61A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +98,10 @@ Global
 		{E5D83726-316D-4142-9EA8-909D96F22FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5D83726-316D-4142-9EA8-909D96F22FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5D83726-316D-4142-9EA8-909D96F22FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83FF78A-F3CA-4336-806E-E4C8939E61A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83FF78A-F3CA-4336-806E-E4C8939E61A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83FF78A-F3CA-4336-806E-E4C8939E61A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83FF78A-F3CA-4336-806E-E4C8939E61A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{9643B4C7-25F1-4FBB-BF5A-1688C944C46F} = {E1F5BEE2-8A4E-46A9-95C5-519484B4D8DE}
 		{DD1C267E-0828-4BDD-858E-50DF62AEC058} = {E1F5BEE2-8A4E-46A9-95C5-519484B4D8DE}
 		{E5D83726-316D-4142-9EA8-909D96F22FE5} = {E1F5BEE2-8A4E-46A9-95C5-519484B4D8DE}
+		{B83FF78A-F3CA-4336-806E-E4C8939E61A2} = {96BB5A37-5DDF-40B7-86DC-8E685D6543E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B600EF1C-C724-46CA-8500-784C6CFD369A}
