@@ -1,6 +1,4 @@
-﻿using Drives.Application.Common.Models;
-
-using Filters.Application.Common.Models;
+﻿using Filters.Application.Common.Models;
 using Filters.Application.Common.Services;
 
 namespace Filters.Infrastructure.Services;

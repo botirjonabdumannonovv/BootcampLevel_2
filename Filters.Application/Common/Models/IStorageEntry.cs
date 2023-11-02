@@ -1,4 +1,4 @@
-﻿namespace Drives.Application.Common.Models;
+﻿namespace Filters.Application.Common.Models;
 
 public interface IStorageEntry
 {

@@ -1,6 +1,4 @@
-﻿using Drives.Application.Common.Models;
-
-namespace Filters.Application.Common.Models;
+﻿namespace Filters.Application.Common.Models;
 
 public class StorageFileFilterModel : IStorageEntry
 {
