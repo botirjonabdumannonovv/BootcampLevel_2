@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>N64_HT1_Entity.Persistence</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="EntityConfiguration\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N64-HT1-Entity.Domain\N64-HT1-Entity.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

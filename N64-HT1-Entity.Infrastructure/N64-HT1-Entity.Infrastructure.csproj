@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>N64_HT1_Entity.Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Notifications\Services\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="7.0.13" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\N64-HT1-Entity.Application\N64-HT1-Entity.Application.csproj" />
+    <ProjectReference Include="..\N64-HT1-Entity.Persistence\N64-HT1-Entity.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
