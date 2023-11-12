@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>N70_Entity.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	
+	
+	
+
+  <ItemGroup>
+    <ProjectReference Include="..\N70-Entity.Domain\N70-Entity.Domain.csproj" />
+    <ProjectReference Include="..\N70-Entity.Infrastructure\N70-Entity.Infrastructure.csproj" />
+    <ProjectReference Include="..\N70-Entity.Persistence\N70-Entity.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
