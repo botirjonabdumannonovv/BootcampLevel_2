@@ -8,12 +8,11 @@ namespace N70_Entity.Persistence.Repositories;
 
 public class RoleRepository : EntityRepositoryBase<Role, IdentityDbContext>, IRoleRepository
 {
-
     public RoleRepository(IdentityDbContext dbContext) : base(dbContext)
     {
     }
 
-    public IQueryable<Role> Get(Expression<Func<Role, bool>>? predicate = null, bool asNoTracking = false)
+    public new IQueryable<Role> Get(Expression<Func<Role, bool>>? predicate = default, bool asNoTracking = false)
     {
         return base.Get(predicate, asNoTracking);
     }

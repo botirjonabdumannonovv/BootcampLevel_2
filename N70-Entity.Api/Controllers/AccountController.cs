@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 using N70_Entity.Application.Common.Identity.Services;
 
-namespace N70_Entity.Apii.Controllers;
-
-[Route("api/[controller]")]
+namespace N70_Entity.Api.Controllers;
 [ApiController]
+[Route("api/[controller]")]
 public class AccountController : ControllerBase
 {
     private readonly IAccountService _accountService;

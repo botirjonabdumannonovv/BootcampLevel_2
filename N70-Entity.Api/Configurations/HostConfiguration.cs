@@ -1,4 +1,4 @@
-﻿namespace N70_Entity.Apii.Configurations;
+﻿namespace N70_Entity.Api.Configurations;
 
 public static partial class HostConfiguration
 {
@@ -14,6 +14,7 @@ public static partial class HostConfiguration
 
         return new(builder);
     }
+
     public static ValueTask<WebApplication> ConfigureAsync(this WebApplication app)
     {
         app

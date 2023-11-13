@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-using N70_Entity.Apii.Configurations;
+using N70_Entity.Api.Configurations;
 using N70_Entity.Application.Common.Identity.Services;
 using N70_Entity.Persistence.DataContexts;
 
@@ -17,10 +17,10 @@ var dbContext = scope.GetRequiredService<IdentityDbContext>();
 var tokenGeneratorService = scope.GetRequiredService<ITokenGeneratorService>();
 var passwordHasherService = scope.GetRequiredService<IPasswordHasherService>();
 
-var adminPassword = passwordHasherService.HashPassword("AdminTest1");
-var guestPassword = passwordHasherService.HashPassword("GuestTest1");
 
-var user = await dbContext.Users.Include(user => user.Role).OrderBy(user => user.Id).FirstOrDefaultAsync();
-string token = tokenGeneratorService.GetToken(user);
+var user = await dbContext.Users
+    .Include(user => user.Role)
+    .OrderBy(user => user.Id).FirstOrDefaultAsync();
+var token = tokenGeneratorService.GetToken(user);
 
 await app.RunAsync();

@@ -10,13 +10,10 @@ namespace N70_Entity.Persistence.Repositories;
 
 public class UserRepository : EntityRepositoryBase<User, IdentityDbContext>, IUserRepository
 {
-    public UserRepository(DbContext dbContext) : base(dbContext)
+    public UserRepository(IdentityDbContext dbContext) : base(dbContext)
     {
     }
-    public IQueryable<User> Get(Expression<Func<User, bool>>? predicate = default, bool asNoTracking = false)
-    {
-        return base.Get(predicate, asNoTracking);
-    }
+
     public ValueTask<User?> GetByIdAsync(Guid userId, bool asNoTracking = false, CancellationToken cancellationToken = default)
     {
         return base.GetByIdAsync(userId, asNoTracking, cancellationToken);

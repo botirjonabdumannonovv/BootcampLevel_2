@@ -1,19 +1,21 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
+﻿using System.Text;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 using N70_Entity.Application.Common.Identity.Services;
+using N70_Entity.Application.Common.Notifications.Services;
 using N70_Entity.Application.Common.Settings;
 using N70_Entity.Infrastructure.Common.Identity.Services;
+using N70_Entity.Infrastructure.Common.Notifications.Services;
 using N70_Entity.Persistence.DataContexts;
 using N70_Entity.Persistence.Repositories;
 using N70_Entity.Persistence.Repositories.Interfaces;
-using N70_Entity.Application.Common.Notifications.Services;
-using N70_Entity.Infrastructure.Common.Notifications.Services;
 
-namespace N70_Entity.Apii.Configurations;
+namespace N70_Entity.Api.Configurations;
 
 public static partial class HostConfiguration
 {
@@ -23,13 +25,15 @@ public static partial class HostConfiguration
 
         return builder;
     }
+
     private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<IdentityDbContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         return builder;
     }
+
     private static WebApplicationBuilder AddIdentityInfrastructure(this WebApplicationBuilder builder)
     {
         builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(nameof(JwtSettings)));
@@ -46,8 +50,8 @@ public static partial class HostConfiguration
             .AddScoped<IRoleRepository, RoleRepository>()
             .AddScoped<IAccessTokenRepository, AccessTokenRepository>();
 
-        builder.Services.AddScoped<IAuthService, AuthService>()
-            .AddScoped<IAccountService, AccountService>()
+        builder.Services.AddScoped<IAccountService, AccountService>()
+            .AddScoped<IAuthService, AuthService>()
             .AddScoped<IUserService, UserService>()
             .AddScoped<IRoleService, RoleService>()
             .AddScoped<IAccessTokenService, AccessTokenService>();
@@ -73,15 +77,18 @@ public static partial class HostConfiguration
             });
 
         return builder;
-
     }
+
     private static WebApplicationBuilder AddNotificationInfrastructure(this WebApplicationBuilder builder)
     {
         builder.Services.Configure<EmailSenderSettings>(builder.Configuration.GetSection(nameof(EmailSenderSettings)));
+
         builder.Services.AddScoped<IEmailOrchestrationService, EmailOrchestrationService>();
 
         return builder;
     }
+
+
     private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
         builder.Services.AddSwaggerGen();
@@ -89,6 +96,7 @@ public static partial class HostConfiguration
 
         return builder;
     }
+
     private static WebApplicationBuilder AddExposers(this WebApplicationBuilder builder)
     {
         builder.Services.AddRouting(options => options.LowercaseUrls = true);
@@ -96,6 +104,7 @@ public static partial class HostConfiguration
 
         return builder;
     }
+
     private static WebApplication UseIdentityInfrastructure(this WebApplication app)
     {
         app.UseAuthentication();
@@ -103,6 +112,7 @@ public static partial class HostConfiguration
 
         return app;
     }
+
     private static WebApplication UseDevTools(this WebApplication app)
     {
         app.UseSwagger();
@@ -110,6 +120,7 @@ public static partial class HostConfiguration
 
         return app;
     }
+
     private static WebApplication UseExposers(this WebApplication app)
     {
         app.MapControllers();

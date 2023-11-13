@@ -7,7 +7,7 @@ namespace N70_Entity.Application.Common.Identity.Services;
 
 public interface ITokenGeneratorService
 {
-    string GetToken(User user);  
+    string GetToken(User? user);  
 
     JwtSecurityToken GetJwtToken(User user);
 

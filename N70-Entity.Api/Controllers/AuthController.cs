@@ -6,7 +6,7 @@ using N70_Entity.Application.Common.Constants;
 using N70_Entity.Application.Common.Identity.Models;
 using N70_Entity.Application.Common.Identity.Services;
 
-namespace N70_Entity.Apii.Controllers;
+namespace N70_Entity.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
