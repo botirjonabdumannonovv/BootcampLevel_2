@@ -9,6 +9,8 @@ public class CommentConfiguration : IEntityTypeConfiguration<Comment>
 {
     public void Configure(EntityTypeBuilder<Comment> builder)
     {
-        //implement relashionship
+        builder.HasOne(comment => comment.Blog).WithMany(comment => comment.Comments).HasForeignKey(comment => comment.BlogId);
+
+        builder.HasOne(comment => comment.User).WithMany(comment => comment.Comments).HasForeignKey(user => user.UserId);
     }
 }

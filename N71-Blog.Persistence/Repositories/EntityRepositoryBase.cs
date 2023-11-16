@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 
-using N70_Entity.Domain.Common;
+using N71_Blog.Domain.Common;
 
 namespace N71_Blog.Persistence.Repositories;
 
@@ -24,13 +24,11 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         var initialQuery = DbContext.Set<TEntity>().Where(entity => true);
 
         if(predicate is not null) 
-        {
             initialQuery = initialQuery.Where(predicate);
-        }
+        
         if(asNoTracking)
-        {
             initialQuery = initialQuery.AsNoTracking();
-        }
+        
         return initialQuery;
     }
     public async ValueTask<TEntity?> GetByIdAsync(
@@ -42,9 +40,8 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         var initialQuery = DbContext.Set<TEntity>().Where(entity => true);
 
         if (asNoTracking)
-        {
             initialQuery = initialQuery.AsNoTracking();
-        }
+        
         return await initialQuery.SingleOrDefaultAsync(entity => entity.Id == id, cancellation);
     }
 
@@ -57,10 +54,10 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         var initialQuery = DbContext.Set<TEntity>().Where(entity => true);
 
         if (asNoTracking)
-        {
             initialQuery = initialQuery.AsNoTracking();
-        }
-        initialQuery = initialQuery.Where(entity => ids.Contains(entity.Id));
+        
+        initialQuery = initialQuery
+            .Where(entity => ids.Contains(entity.Id));
 
         return await initialQuery.ToListAsync(cancellation);    
 
@@ -96,6 +93,7 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         }
         return entity;
     }
+    
     public async ValueTask<TEntity> DeleteAsync(
         TEntity entity, 
         bool saveChanges = true, 
@@ -110,6 +108,7 @@ public abstract class EntityRepositoryBase<TEntity, TContext> where TEntity : cl
         }
         return entity;
     }
+    
     public async ValueTask<TEntity?> DeleteByIdAsync(
         Guid id,
         bool saveChanges = true, 

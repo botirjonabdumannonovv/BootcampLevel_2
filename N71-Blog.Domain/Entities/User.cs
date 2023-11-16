@@ -1,6 +1,8 @@
-﻿namespace N71_Blog.Domain.Entities;
+﻿using N71_Blog.Domain.Common;
 
-public class User
+namespace N71_Blog.Domain.Entities;
+
+public class User : IEntity
 {
     public Guid Id { get; set; }
 
@@ -10,9 +12,9 @@ public class User
 
     public string EmailAddress { get; set; } = default!;
 
-    public string Password { get; set; } = default!;
+    public string PasswordHash { get; set; } = default!;
 
-    public Guid BlogId { get; set; }
+    public virtual ICollection<Blog> Blogs { get; set; } = new List<Blog>();
 
-    public virtual Blog Blog { get; set; }
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 }

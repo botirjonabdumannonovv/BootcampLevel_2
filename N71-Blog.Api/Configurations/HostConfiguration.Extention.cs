@@ -22,7 +22,7 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddPersistence(this  WebApplicationBuilder builder)
     {
-        builder.Services.AddDbContext<BlogDbContext>(options => options.UseNpgsql("DefaultConnection"));
+        builder.Services.AddDbContext<BlogsDbContext>(options => options.UseNpgsql("DefaultConnection"));
 
         return builder;
     }

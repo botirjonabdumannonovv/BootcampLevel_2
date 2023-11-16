@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-using N70_Entity.Domain.Entities;
+using N71_Blog.Domain.Entities;
 
 namespace N71_Blog.Persistence.Repositories.Interface;
 

@@ -6,7 +6,7 @@ using N71_Blog.Persistence.Repositories.Interface;
 
 namespace N71_Blog.Persistence.Repositories;
 
-public class UserRepository : EntityRepositoryBase<User, BlogDbContext>, IUserRepository
+public class UserRepository : EntityRepositoryBase<User, BlogsDbContext>, IUserRepository
 {
     public UserRepository(DbContext dbContext) : base(dbContext)
     {

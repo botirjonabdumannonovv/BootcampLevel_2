@@ -8,7 +8,7 @@ using N71_Blog.Persistence.Repositories.Interface;
 
 namespace N71_Blog.Persistence.Repositories;
 
-public class CommentRepository : EntityRepositoryBase<Comment, BlogDbContext>, ICommentRepository
+public class CommentRepository : EntityRepositoryBase<Comment, BlogsDbContext>, ICommentRepository
 {
     public CommentRepository(DbContext dbContext) : base(dbContext)
     {
