@@ -133,15 +133,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HomeTasks", "HomeTasks", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog", "Blog", "{5BACD89D-8C0A-43DF-8081-61F7DA59C008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N71-Blog.Application", "N71-Blog.Application\N71-Blog.Application.csproj", "{202CE1CE-7B93-48B7-B01B-66F3AEF64932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N71-Blog.Application", "N71-Blog.Application\N71-Blog.Application.csproj", "{202CE1CE-7B93-48B7-B01B-66F3AEF64932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N71-Blog.Domain", "N71-Blog.Domain\N71-Blog.Domain.csproj", "{99935744-BE48-43B7-A911-7FF27FE32353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N71-Blog.Domain", "N71-Blog.Domain\N71-Blog.Domain.csproj", "{99935744-BE48-43B7-A911-7FF27FE32353}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N71-Blog.Infrastructure", "N71-Blog.Infrastructure\N71-Blog.Infrastructure.csproj", "{03837BF5-3C17-46E2-A1F1-50811FBA3840}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N71-Blog.Infrastructure", "N71-Blog.Infrastructure\N71-Blog.Infrastructure.csproj", "{03837BF5-3C17-46E2-A1F1-50811FBA3840}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N71-Blog.Persistence", "N71-Blog.Persistence\N71-Blog.Persistence.csproj", "{EB7B5857-2C2D-48D2-8C60-7FE40186FAA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N71-Blog.Persistence", "N71-Blog.Persistence\N71-Blog.Persistence.csproj", "{EB7B5857-2C2D-48D2-8C60-7FE40186FAA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N71-Blog.Api", "N71-Blog.Api\N71-Blog.Api.csproj", "{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "N71-Blog.Api", "N71-Blog.Api\N71-Blog.Api.csproj", "{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundService", "BackgroundService", "{099C0699-F0EF-41B0-BED8-AA5305053A44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgrounService", "BackgrounService\BackgrounService.csproj", "{B82BC95C-117E-44B5-BA77-2BD33D125294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -297,6 +301,10 @@ Global
 		{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82BC95C-117E-44B5-BA77-2BD33D125294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82BC95C-117E-44B5-BA77-2BD33D125294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82BC95C-117E-44B5-BA77-2BD33D125294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82BC95C-117E-44B5-BA77-2BD33D125294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -358,6 +366,7 @@ Global
 		{03837BF5-3C17-46E2-A1F1-50811FBA3840} = {5BACD89D-8C0A-43DF-8081-61F7DA59C008}
 		{EB7B5857-2C2D-48D2-8C60-7FE40186FAA8} = {5BACD89D-8C0A-43DF-8081-61F7DA59C008}
 		{0B8707EB-8FF4-40DD-A2BA-105C9CB3343B} = {5BACD89D-8C0A-43DF-8081-61F7DA59C008}
+		{B82BC95C-117E-44B5-BA77-2BD33D125294} = {099C0699-F0EF-41B0-BED8-AA5305053A44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B600EF1C-C724-46CA-8500-784C6CFD369A}

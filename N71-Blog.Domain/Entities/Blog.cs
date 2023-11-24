@@ -1,6 +1,8 @@
-﻿namespace N71_Blog.Domain.Entities;
+﻿using N71_Blog.Domain.Common;
 
-public class Blog
+namespace N71_Blog.Domain.Entities;
+
+public class Blog : IEntity
 {
     public Guid Id { get; set; }
 

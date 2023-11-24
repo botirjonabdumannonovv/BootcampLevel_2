@@ -1,6 +1,8 @@
-﻿namespace N71_Blog.Domain.Entities;
+﻿using N71_Blog.Domain.Common;
 
-public class Comment
+namespace N71_Blog.Domain.Entities;
+
+public class Comment : IEntity
 {
     public Guid Id { get; set; }
 
