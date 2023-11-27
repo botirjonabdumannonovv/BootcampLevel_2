@@ -47,8 +47,9 @@ public static partial class HostConfiguration
     private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services
-            .AddScoped<UpdateAuditableInterceptor>();
-
+            .AddScoped<UpdateAuditableInterceptor>()
+            .AddScoped<UpdatePrimaryKeyInterceptor>();
+            
         return builder;
     }
 
@@ -62,6 +63,7 @@ public static partial class HostConfiguration
 
                 var serviceScope = provider.CreateScope().ServiceProvider;
                 options.AddInterceptors(provider.GetRequiredService<UpdateAuditableInterceptor>());
+                options.AddInterceptors(provider.GetRequiredService<UpdatePrimaryKeyInterceptor>());
             }
         );
 
@@ -82,14 +84,18 @@ public static partial class HostConfiguration
 
     private static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
-        builder.Services.AddSwaggerGen().AddEndpointsApiExplorer();
+        builder.Services
+            .AddSwaggerGen()
+            .AddEndpointsApiExplorer();
 
         return builder;
     }
 
     private static WebApplication UseDevTools(this WebApplication app)
     {
-        app.UseSwagger().UseSwaggerUI();
+        app
+            .UseSwagger()
+            .UseSwaggerUI();
 
         return app;
     }

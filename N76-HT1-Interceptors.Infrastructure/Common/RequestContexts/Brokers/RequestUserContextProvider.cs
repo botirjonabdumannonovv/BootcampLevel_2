@@ -9,13 +9,14 @@ namespace N76_HT1_Interceptors.Infrastructure.Common.RequestContexts.Brokers;
 public class RequestUserContextProvider(
     IHttpContextAccessor httpContextAccessor,
     IOptions<RequestUserContextSettings> requestUserContextSettings
-    ) : IRequestUserContextProvider
+) : IRequestUserContextProvider
 {
     private readonly RequestUserContextSettings _requestUserContextSettings = requestUserContextSettings.Value;
+
     public Guid GetUserIdAsync(CancellationToken cancellationToken = default)
     {
         var httpContext = httpContextAccessor.HttpContext!;
-        var userClaim = httpContext.User.Claims.FirstOrDefault(claim => claim.Type == ClaimConstants.UserId)?.Value;
-        return userClaim is not null ? Guid.Parse(userClaim) : _requestUserContextSettings.SystemUserId;
+        var userIdClaim = httpContext.User.Claims.FirstOrDefault(claim => claim.Type == ClaimConstants.UserId)?.Value;
+        return userIdClaim is not null ? Guid.Parse(userIdClaim) : _requestUserContextSettings.SystemUserId;
     }
 }

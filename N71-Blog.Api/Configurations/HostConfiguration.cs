@@ -7,7 +7,6 @@ public static partial class HostConfiguration
         builder
             .AddHttpContextProvider()
             .AddPersistence()
-            .AddDevTools()
             .AddExposers();
 
         return new(builder);

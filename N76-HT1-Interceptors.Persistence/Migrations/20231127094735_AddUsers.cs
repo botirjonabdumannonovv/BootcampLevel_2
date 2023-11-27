@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace N76_HT1_Interceptors.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class AddUser : Migration
+    public partial class AddUsers : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

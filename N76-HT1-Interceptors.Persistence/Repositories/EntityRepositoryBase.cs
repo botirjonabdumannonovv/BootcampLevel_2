@@ -22,7 +22,7 @@ public abstract class EntityRepositoryBase<TEntity, TContext>(TContext dbcontext
     }
     protected async ValueTask<TEntity?> GetByIdAsync(Guid id, bool asNoTracking = false, CancellationToken cancellationToken = default)
     {
-        var initialQuery = DbContext.Set<TEntity>().Where(entity => entity.Equals(id));
+        var initialQuery = DbContext.Set<TEntity>().Where(entity => true);
 
         if (asNoTracking)
             initialQuery = initialQuery.AsNoTracking();
@@ -58,7 +58,7 @@ public abstract class EntityRepositoryBase<TEntity, TContext>(TContext dbcontext
 
     protected async ValueTask<TEntity> UpdateAsync(TEntity entity, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
-        DbContext.Set<TEntity>().Update(entity);
+        DbContext.Update(entity);
 
         if (saveChanges)
             await DbContext.SaveChangesAsync(cancellationToken);

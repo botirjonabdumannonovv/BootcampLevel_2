@@ -29,7 +29,7 @@ public class UserService(IUserRepository userRepository) : IUserService
 
     public async ValueTask<User> UpdateAsync(User user, bool saveChanges = true, CancellationToken cancellationToken = default)
     {
-        var foundUser = await GetByIdAsync(user.Id, cancellationToken: cancellationToken)
+        var foundUser = await GetByIdAsync(user.Id, true, cancellationToken: cancellationToken)
             ?? throw new InvalidOperationException();
 
         foundUser.FirstName = user.FirstName;

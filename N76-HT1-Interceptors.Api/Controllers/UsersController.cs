@@ -36,7 +36,7 @@ public class UsersController(IMapper mapper,IUserService userService) : Controll
             nameof(GetById),
             new
             {
-                userId = createdUser.Id.ToString(),
+                userId = createdUser.Id,
             },
             mapper.Map<UserDto>(createdUser)
         );
@@ -46,7 +46,7 @@ public class UsersController(IMapper mapper,IUserService userService) : Controll
     public async ValueTask<IActionResult> UpdateAsync([FromBody] UserDto user)
     {
         var result =  await userService.UpdateAsync(mapper.Map<User>(user));
-        return Ok(mapper.Map<UserDto>(result));
+        return Ok();
     }
 
     [HttpDelete("{userId:guid}")]

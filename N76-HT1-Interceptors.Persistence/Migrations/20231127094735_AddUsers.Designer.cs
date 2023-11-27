@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace N76_HT1_Interceptors.Persistence.Migrations
 {
     [DbContext(typeof(InterceptorDbContext))]
-    [Migration("20231126180627_AddUser")]
-    partial class AddUser
+    [Migration("20231127094735_AddUsers")]
+    partial class AddUsers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
