@@ -1,9 +1,4 @@
-﻿
-
-
-var timeStamp = TimeProvider.System.GetTimestamp();
-
-//await Task.Delay(1000);
+﻿var timeStamp = TimeProvider.System.GetTimestamp();
 
 var elapsedTime = TimeProvider.System.GetElapsedTime(timeStamp);
 
