@@ -19,13 +19,6 @@ namespace N70_Entity.Api.Configurations;
 
 public static partial class HostConfiguration
 {
-    private static WebApplicationBuilder AddHttpContextProvider(this WebApplicationBuilder builder)
-    {
-        builder.Services.AddHttpContextAccessor();
-
-        return builder;
-    }
-
     private static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<IdentityDbContext>(options =>
@@ -40,21 +33,17 @@ public static partial class HostConfiguration
         builder.Services.Configure<VerificationTokenSettings>(
             builder.Configuration.GetSection(nameof(VerificationTokenSettings)));
 
-        builder.Services.AddDataProtection();
-
         builder.Services.AddTransient<ITokenGeneratorService, TokenGeneratorService>()
             .AddTransient<IPasswordHasherService, PasswordHasherService>()
             .AddTransient<IVerificationTokenGeneratorService, VerificationTokenGeneratorService>();
 
         builder.Services.AddScoped<IUserRepository, UserRepository>()
-            .AddScoped<IRoleRepository, RoleRepository>()
-            .AddScoped<IAccessTokenRepository, AccessTokenRepository>();
+            .AddScoped<IRoleRepository, RoleRepository>();
 
         builder.Services.AddScoped<IAccountService, AccountService>()
             .AddScoped<IAuthService, AuthService>()
             .AddScoped<IUserService, UserService>()
-            .AddScoped<IRoleService, RoleService>()
-            .AddScoped<IAccessTokenService, AccessTokenService>();
+            .AddScoped<IRoleService, RoleService>();
 
         var jwtSettings = new JwtSettings();
         builder.Configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);

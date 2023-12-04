@@ -16,7 +16,6 @@ public class AuthService : IAuthService
     private readonly IUserService _userService;
     private readonly ITokenGeneratorService _tokenGeneratorService;
     private readonly IPasswordHasherService _passwordHasherService;
-    private readonly IAccessTokenService _accessTokenService;
     private readonly IEmailOrchestrationService _emailOrchestrationService;
     private readonly IAccountService _accountService;
     private readonly IHttpContextAccessor _httpContextAccessor;
@@ -26,7 +25,6 @@ public class AuthService : IAuthService
         IUserService userService,
         ITokenGeneratorService tokenGeneratorService,
         IPasswordHasherService passwordHasherService,
-        IAccessTokenService accessTokenService,
         IEmailOrchestrationService emailOrchestrationService,
         IAccountService accountService,
         IHttpContextAccessor httpContextAccessor
@@ -37,7 +35,6 @@ public class AuthService : IAuthService
         _userService = userService;
         _tokenGeneratorService = tokenGeneratorService;
         _passwordHasherService = passwordHasherService;
-        _accessTokenService = accessTokenService;
         _emailOrchestrationService = emailOrchestrationService;
         _accountService = accountService;
         _httpContextAccessor = httpContextAccessor;
@@ -68,8 +65,6 @@ public class AuthService : IAuthService
             throw new AuthenticationException("Login details invalid!");
 
         var accessToken = _tokenGeneratorService.GetToken(foundUser);
-        await _accessTokenService.CreateAsync(foundUser.Id, accessToken,cancellationToken:cancellationToken);
-
         return accessToken;
     }
 

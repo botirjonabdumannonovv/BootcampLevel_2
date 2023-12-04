@@ -5,7 +5,6 @@ public static partial class HostConfiguration
     public static ValueTask<WebApplicationBuilder> ConfigureAsync(this WebApplicationBuilder builder)
     {
         builder
-            .AddHttpContextProvider()
             .AddPersistence()
             .AddIdentityInfrastructure()
             .AddNotificationInfrastructure()

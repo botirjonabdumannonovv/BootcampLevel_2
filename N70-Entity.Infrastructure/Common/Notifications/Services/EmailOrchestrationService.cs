@@ -23,7 +23,7 @@ public class EmailOrchestrationService : IEmailOrchestrationService
         mail.Subject = "Siz muvaffaqiyatli registratsiyadan o'tdingiz";
         mail.Body = message;
 
-        var smtpClient = new SmtpClient(_emailSenderSettings.Host, _emailSenderSettings.Port); // Replace with your SMTP server address and port
+        var smtpClient = new SmtpClient(_emailSenderSettings.Host, _emailSenderSettings.Port);
         smtpClient.Credentials = new NetworkCredential(_emailSenderSettings.CredentialAddress, _emailSenderSettings.Password);
         smtpClient.EnableSsl = true;
 

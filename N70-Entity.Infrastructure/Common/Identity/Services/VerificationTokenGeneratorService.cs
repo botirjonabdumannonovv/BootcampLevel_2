@@ -36,7 +36,7 @@ public class VerificationTokenGeneratorService : IVerificationTokenGeneratorServ
         var unprotectedToken = _dataProtectionProvider.Unprotect(token);
 
         var verificationToken = JsonConvert.DeserializeObject<VerificationToken>(unprotectedToken)??
-            throw new ArgumentException("Invalid verification model", nameof(token));
+            throw new ArgumentException("Invalid", nameof(token));
 
         return (verificationToken, verificationToken.ExpiryTime > DateTimeOffset.UtcNow);
     }

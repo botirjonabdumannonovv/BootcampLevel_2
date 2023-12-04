@@ -23,7 +23,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Register([FromBody] RegistrationDetails registrationDetails, CancellationToken cancellationToken)
     {
         var result = await _authService.RegisterAsync(registrationDetails, cancellationToken);
-        return result ? Ok() : BadRequest();
+        return Ok(result);
     }
 
     [HttpPost("login")]
