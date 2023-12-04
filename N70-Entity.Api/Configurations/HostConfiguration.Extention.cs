@@ -1,11 +1,9 @@
 ﻿using System.Text;
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-
 using N70_Entity.Application.Common.Identity.Services;
 using N70_Entity.Application.Common.Notifications.Services;
 using N70_Entity.Application.Common.Settings;
