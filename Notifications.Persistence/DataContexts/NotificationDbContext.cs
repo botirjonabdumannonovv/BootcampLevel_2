@@ -13,6 +13,10 @@ public class NotificationDbContext : DbContext
     
     public DbSet<EmailHistory> EmailHistories => Set<EmailHistory>();
     
+    public DbSet<User> Users => Set<User>();
+
+    public DbSet<UserSettings> UserSettings => Set<UserSettings>();
+
     public NotificationDbContext(DbContextOptions<NotificationDbContext> options) : base(options)
     {
     }

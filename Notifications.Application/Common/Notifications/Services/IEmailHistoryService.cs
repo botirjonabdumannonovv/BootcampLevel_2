@@ -1,7 +1,7 @@
 ﻿using Notifications.Infrastructure.Application.Common.Models.Querying;
 using Notifications.Infrastructure.Domain.Entities;
 
-namespace Notifications.Application.Common.Notifications.Services;
+namespace Notifications.Infrastructure.Application.Common.Notifications.Services;
 
 public interface IEmailHistoryService
 {

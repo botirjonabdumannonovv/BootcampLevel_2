@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using Notifications.Domain.Common.Entities;
+using Notifications.Infrastructure.Domain.Common.Entities;
 using Notifications.Infrastructure.Domain.Enums;
 
 namespace Notifications.Infrastructure.Domain.Entities;

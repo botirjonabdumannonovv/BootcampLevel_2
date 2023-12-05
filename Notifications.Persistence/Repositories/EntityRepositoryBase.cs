@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using Notifications.Domain.Common.Entities;
+using Notifications.Infrastructure.Domain.Common.Entities;
 
 namespace Notifications.Infrastructure.Persistence.Repositories;
 

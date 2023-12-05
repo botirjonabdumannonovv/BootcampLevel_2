@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Notifications.Application.Common.Notifications.Services;
 using Notifications.Infrastructure.Application.Common.Models.Querying;
 using Notifications.Infrastructure.Application.Common.Notifications.Services;
 using Notifications.Infrastructure.Application.Common.Querying.Extensions;

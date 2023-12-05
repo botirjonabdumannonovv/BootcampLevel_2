@@ -65,12 +65,13 @@ public class SmsOrchestrationService : ISmsOrchestrationService
                 throw new InvalidOperationException(
                     $"Invalid template for sending {NotificationType.Sms} notification");
 
+            // blogs.Comments.Add(new Comment { Title = "My comment" });
 
             // render template
             await _smsRenderingService.RenderAsync(message, cancellationToken);
 
             // send message
-            //await _smsSenderService.SendAsync(message, cancellationToken);
+            await _smsSenderService.SendAsync(message, cancellationToken);
 
             // save history
 
